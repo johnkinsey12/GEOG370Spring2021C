@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DurhamMap</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+</head>
+<body>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px;}
+    </style>
+
+    <script>
+        var map = L.map('mapid').setView([35.99, -78.90], 12.5);
+        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+        }).addTo(map)
+
+        var iconA = L.icon({ // notice the L.icon which is a Leaflet object with properties
+        iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnwuQ2xd8ymNp0kZFCrsr7XIcgmLD9Tmkh2A&usqp=CAU', // this points to a jpg image obtained from the internet
+        iconSize: [50,50], // size of the icon
+        popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+    });
+
+    var PopupA = "Durham Bulls Atheltic Park (Appears to have been rennovated over the years in conjunction with the rennovation of Durham, NC as well as expanded)<br/><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/DBAP_game_action_1.JPG/200px-DBAP_game_action_1.JPG' width='100px'/>";
+
+    L.marker([35.991797, -78.903840], {icon:iconA}).addTo(map)
+            .bindPopup(PopupA)
+            //.openPopup()
+
+        var iconB = L.icon({ // notice the L.icon which is a Leaflet object with properties
+        iconUrl: 'https://i.pinimg.com/originals/11/48/d5/1148d51628dab10b499a0a8a1909ac4e.jpg', // this points to a jpg image obtained from the internet
+        iconSize: [50,50], // size of the icon
+        popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+    });
+
+    var PopupB = "Durham School of the Arts (Appears to have existed in 2002 and continues to be a significant art school for Durham, NC, as well as for NC in general)<br/><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/2008-08-04_Entrance_of_Julian_S_Carr_Building_at_DSA.jpg/220px-2008-08-04_Entrance_of_Julian_S_Carr_Building_at_DSA.jpg' width='100px'/>";
+
+    L.marker([36.002356, -78.907230], {icon:iconB}).addTo(map)
+            .bindPopup(PopupB)
+            //.openPopup()
+
+        var iconC = L.icon({ // notice the L.icon which is a Leaflet object with properties
+        iconUrl: 'https://i.pinimg.com/originals/69/d5/5f/69d55f65ab05873a476c16fa24b4a8d4.jpg', // this points to a jpg image obtained from the internet
+        iconSize: [50,50], // size of the icon
+        popupAnchor: [0,0] // where the icon is located relative to the lat lon of the point.
+    });
+
+    var PopupC = "Durham Central Park (Appears to have been expanded and rennovated in cojunction with Durham, NC with more greenspace added as well as more room to host activities)<br/><img src='https://images.squarespace-cdn.com/content/v1/5a2abe8e9f8dce833ed627a1/1573676831078-BIKS923B5HAA2DG6YLVK/ke17ZwdGBToddI8pDm48kELBt6u1p1SNWZHPrIV5ynQUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcKtlpmRsEEH1HpTK7CycAqJ49o4XNQOqddgqn-44L8oeOtItHKELIx92umiLv7uUu/Crossing+Central+Park+Lrg.jpg' width='100px'/>";
+
+    L.marker([36.000290, -78.901737], {icon:iconC}).addTo(map)
+            .bindPopup(PopupC)
+            //.openPopup()  
+
+
+    </script>
+
+    
+</body>
+</html>
